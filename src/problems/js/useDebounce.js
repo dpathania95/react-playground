@@ -11,7 +11,7 @@ function debounce(cb, delay=200) {
 }
 
 export function useDebounced(value, delay=200) {
-	const [debouncedValue, setDebouncedValue] = useState();
+	const [debouncedValue, setDebouncedValue] = useState(value);
 
 	useEffect(() => {
 		const timeout = setTimeout(() => {
@@ -19,7 +19,7 @@ export function useDebounced(value, delay=200) {
 		}, delay);
 
 		return () => {
-			if (timeout) clearInterval(timeout);
+			if (timeout) clearTimeout(timeout);
 		}
 	}, [value, delay]);
 
