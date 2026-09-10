@@ -8,6 +8,7 @@ import VirtualList from './problems/VirtualList'
 import RetryMechanisms from './problems/RetryMechanisms'
 import Autocomplete from './problems/Autocomplete'
 import ConfigDrivenForm from './problems/ConfigDrivenForm'
+import Timer from './problems/Timer';
 
 const PROBLEMS = [
   {
@@ -58,6 +59,13 @@ const PROBLEMS = [
       'Render a fully-validated form from a JSON config — no hardcoded fields. Support 8 field types, inline validation (required, minLength, maxLength, min, max, pattern, custom), and conditional fields that show/hide based on other field values.',
     component: ConfigDrivenForm,
   },
+  {
+    id: 'timer',
+    title: '7. Timer',
+    difficulty: 'Medium',
+    description: '',
+    component: Timer,
+  }
 ]
 
 const DIFFICULTY_COLOR = {
