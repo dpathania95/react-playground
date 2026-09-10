@@ -1,3 +1,14 @@
+/*
+  Returns a promise which fulfills with array of settled values which is an object
+  {
+    status: 'fulfilled' | 'rejected',
+    value: '' -> incase of fulfilled,
+    reason: '' -> incase of rejected,
+  }
+  It does not reject.
+  Upon passing empty array or null value, it resolves with empty array.
+*/
+
 function promiseAllSettled(iterable) {
   return new Promise((resolve) => {
     let result = [];
@@ -33,8 +44,8 @@ const p0 = new Promise((resolve) => {
             resolve(2);
           }, 10);
         });
-        const p1 = Promise.resolve(3);
-        const p2 = 4;
-promiseAllSettled([p0, p1, p2]).then((data) => {
+const p1 = Promise.resolve(3);
+const p2 = 4;
+promiseAllSettled([p0,p1,p2]).then((data) => {
 	console.log(data);
 })
